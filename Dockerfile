@@ -1,4 +1,4 @@
-FROM python:rc-alpine3.12 as builder
+FROM python:3.10-slim-bullseye as builder
 
 RUN apk add --no-cache build-base curl-dev
 
@@ -9,7 +9,7 @@ WORKDIR wfuzz/
 RUN python setup.py install
 
 
-FROM python:rc-alpine3.12
+FROM python:3.10-slim-bullseye
 
 RUN apk add --no-cache curl-dev
 
